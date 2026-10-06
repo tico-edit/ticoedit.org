@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
     <style>
       div.nx-header-title { font-family: 'VT323', monospace; font-size: 60px; top: -4px; }
-      .nx-cursor { display: inline-block; width: 0.45em; height: 0.62em; margin-left: 0.06em; background: currentColor; }
+      .nx-cursor { display: inline-block; width: 0.45em; height: 0.62em; margin-left: calc(0.06em + 0.2ch); background: currentColor; }
     </style>
   </head>
   <body onload="sh_highlightDocument();">
