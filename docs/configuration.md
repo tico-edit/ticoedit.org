@@ -151,9 +151,11 @@ tico's behavior. Everything not marked that way works.
   line by line. **(not yet implemented)**
 - `linenumbers` — show line numbers to the left of the text (colored by
   `numbercolor`).
-- `matchbrackets STRING` — the bracket-character pairs `M-]`'s
-  find-matching-bracket command should recognize. **(not yet
-  implemented — `M-]` itself isn't implemented yet either)**
+- `matchbrackets STRING` — the brackets `M-]` (go to the matching
+  bracket) recognizes: all the opening brackets first, then their
+  closing partners in the same order. The default is `"(<[{)>]}"`. The
+  value must not contain blanks and must have an even number of
+  characters.
 - `minibar` — use a single-line, minimal status bar instead of the
   full title/status bars.
 - `mouse` — enable mouse support (clicking to place the cursor,

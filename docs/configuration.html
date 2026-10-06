@@ -174,9 +174,11 @@ using it for text. <strong>(not yet implemented)</strong></li>
 line by line. <strong>(not yet implemented)</strong></li>
 <li><code>linenumbers</code> — show line numbers to the left of the text (colored by
 <code>numbercolor</code>).</li>
-<li><code>matchbrackets STRING</code> — the bracket-character pairs <code>M-]</code>'s
-find-matching-bracket command should recognize. <strong>(not yet
-implemented — <code>M-]</code> itself isn't implemented yet either)</strong></li>
+<li><code>matchbrackets STRING</code> — the brackets <code>M-]</code> (go to the matching
+bracket) recognizes: all the opening brackets first, then their
+closing partners in the same order. The default is <code>"(&lt;[{)&gt;]}"</code>. The
+value must not contain blanks and must have an even number of
+characters.</li>
 <li><code>minibar</code> — use a single-line, minimal status bar instead of the
 full title/status bars.</li>
 <li><code>mouse</code> — enable mouse support (clicking to place the cursor,
