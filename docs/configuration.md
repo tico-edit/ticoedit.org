@@ -109,7 +109,9 @@ tico's behavior. Everything not marked that way works.
   (punctuation counts as its own word) for word-wise cursor movement.
   **(not yet implemented)**
 - `wordchars STRING` — extra characters (beyond letters and digits)
-  that count as part of a word, for word-wise movement. **(not yet
+  that count as part of a word. Honored by word completion (`^]`): with
+  `set wordchars "_"`, typing `foo` and pressing `^]` can complete to
+  `foo_bar`. Word-wise movement doesn't consult it yet. **(partly
   implemented)**
 - `zap` — let Backspace/Delete erase a marked selection in one go,
   instead of requiring Cut first. **(not yet implemented)**

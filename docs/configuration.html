@@ -128,7 +128,9 @@ it during justify.</li>
 (punctuation counts as its own word) for word-wise cursor movement.
 <strong>(not yet implemented)</strong></li>
 <li><code>wordchars STRING</code> — extra characters (beyond letters and digits)
-that count as part of a word, for word-wise movement. <strong>(not yet
+that count as part of a word. Honored by word completion (<code>^]</code>): with
+<code>set wordchars "_"</code>, typing <code>foo</code> and pressing <code>^]</code> can complete to
+<code>foo_bar</code>. Word-wise movement doesn't consult it yet. <strong>(partly
 implemented)</strong></li>
 <li><code>zap</code> — let Backspace/Delete erase a marked selection in one go,
 instead of requiring Cut first. <strong>(not yet implemented)</strong></li>
