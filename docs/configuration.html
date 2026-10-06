@@ -140,7 +140,7 @@ instead of requiring Cut first. <strong>(not yet implemented)</strong></li>
 <li><code>casesensitive</code> — make searches and replacements case-sensitive by
 default (still toggleable per-search with <code>M-C</code>).</li>
 <li><code>historylog</code> — save search/replace/execute history to disk between
-sessions, and reload it on startup.</li>
+sessions, and reload it on startup. Off in restricted mode.</li>
 <li><code>regexp</code> — treat search/replace patterns as regular expressions by
 default (still toggleable per-search with <code>M-R</code>).</li>
 </ul>
@@ -235,8 +235,15 @@ open, and honor other editors' lock files.</li>
 with <code>^R</code>) into its own buffer instead of replacing the current one.</li>
 <li><code>noconvert</code> — don't convert a DOS/Mac-format file's line endings on
 read, or convert back on write; keep the bytes as-is.</li>
-<li><code>operatingdir DIR</code> — restrict file operations to this directory (and
-its subdirectories). <strong>(not yet implemented)</strong></li>
+<li><code>operatingdir DIR</code> — confine tico to <code>DIR</code> and what's below it. tico
+starts in <code>DIR</code> (so relative names, including those on the command
+line, are taken from there) and refuses to read a file from outside
+it ("Can't read file from outside of DIR") or write one there ("Can't
+write outside of DIR"). The file browser and Tab completion stay
+inside too, and <code>^R</code> says <code>[from DIR]</code>. A <code>DIR</code> that isn't an
+existing directory stops tico from starting. <code>-o DIR</code> /
+<code>--operatingdir DIR</code> on the command line; in restricted mode, only
+the command-line one counts.</li>
 <li><code>positionlog</code> — remember where the cursor was when you closed each
 file, and put it back there the next time you open that file (from
 the command line, or with <code>^R</code> into a new buffer). A <code>+LINE</code> on the
@@ -252,9 +259,18 @@ punctuation for justify (default <code>!.?</code>), consulted together with
 <code>brackets</code>.</li>
 <li><code>quotestr REGEX</code> — the regular expression that identifies a quoted
 line's prefix (e.g. <code>&gt;</code>) when justifying quoted text.</li>
-<li><code>restricted</code> — restricted mode: disable most file-system-affecting
-features (see nano's own documentation for the exact restriction
-list, which tico mirrors). <strong>(not yet implemented)</strong></li>
+<li><code>restricted</code> — not a nanorc setting (as in nano): restricted mode is
+turned on with <code>-R</code> / <code>--restricted</code>, or by running tico under a name
+that starts with <code>r</code> (like nano's <code>rnano</code>). tico then touches only
+the files named on the command line. Read File (<code>^R</code>), Execute
+(<code>^T</code>), suspending, the spell checker, linter and formatter all say
+"This function is disabled in restricted mode". At the Write Out
+prompt a named buffer's name can't be changed, an unnamed one can't
+overwrite an existing file, a selection isn't written on its own,
+and Append, Prepend, Backup File and Browse are gone. Tab completion
+is off, <code>backup</code>, <code>historylog</code> and <code>positionlog</code> are off, a nanorc
+<code>operatingdir</code> is ignored, and the title bar says "Restricted" until
+the buffer is modified.</li>
 <li><code>saveonexit</code> — save changes on exit without asking.</li>
 <li><code>speller PROGRAM</code> — use <code>PROGRAM</code> as the spell checker (<code>^T</code>) instead
 of the built-in one.</li>

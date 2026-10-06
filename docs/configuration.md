@@ -119,7 +119,7 @@ tico's behavior. Everything not marked that way works.
 - `casesensitive` — make searches and replacements case-sensitive by
   default (still toggleable per-search with `M-C`).
 - `historylog` — save search/replace/execute history to disk between
-  sessions, and reload it on startup.
+  sessions, and reload it on startup. Off in restricted mode.
 - `regexp` — treat search/replace patterns as regular expressions by
   default (still toggleable per-search with `M-R`).
 
@@ -210,8 +210,15 @@ tico's behavior. Everything not marked that way works.
   with `^R`) into its own buffer instead of replacing the current one.
 - `noconvert` — don't convert a DOS/Mac-format file's line endings on
   read, or convert back on write; keep the bytes as-is.
-- `operatingdir DIR` — restrict file operations to this directory (and
-  its subdirectories). **(not yet implemented)**
+- `operatingdir DIR` — confine tico to `DIR` and what's below it. tico
+  starts in `DIR` (so relative names, including those on the command
+  line, are taken from there) and refuses to read a file from outside
+  it ("Can't read file from outside of DIR") or write one there ("Can't
+  write outside of DIR"). The file browser and Tab completion stay
+  inside too, and `^R` says `[from DIR]`. A `DIR` that isn't an
+  existing directory stops tico from starting. `-o DIR` /
+  `--operatingdir DIR` on the command line; in restricted mode, only
+  the command-line one counts.
 - `positionlog` — remember where the cursor was when you closed each
   file, and put it back there the next time you open that file (from
   the command line, or with `^R` into a new buffer). A `+LINE` on the
@@ -227,9 +234,18 @@ tico's behavior. Everything not marked that way works.
   `brackets`.
 - `quotestr REGEX` — the regular expression that identifies a quoted
   line's prefix (e.g. `> `) when justifying quoted text.
-- `restricted` — restricted mode: disable most file-system-affecting
-  features (see nano's own documentation for the exact restriction
-  list, which tico mirrors). **(not yet implemented)**
+- `restricted` — not a nanorc setting (as in nano): restricted mode is
+  turned on with `-R` / `--restricted`, or by running tico under a name
+  that starts with `r` (like nano's `rnano`). tico then touches only
+  the files named on the command line. Read File (`^R`), Execute
+  (`^T`), suspending, the spell checker, linter and formatter all say
+  "This function is disabled in restricted mode". At the Write Out
+  prompt a named buffer's name can't be changed, an unnamed one can't
+  overwrite an existing file, a selection isn't written on its own,
+  and Append, Prepend, Backup File and Browse are gone. Tab completion
+  is off, `backup`, `historylog` and `positionlog` are off, a nanorc
+  `operatingdir` is ignored, and the title bar says "Restricted" until
+  the buffer is modified.
 - `saveonexit` — save changes on exit without asking.
 - `speller PROGRAM` — use `PROGRAM` as the spell checker (`^T`) instead
   of the built-in one.
