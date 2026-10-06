@@ -125,8 +125,11 @@ tico's behavior. Everything not marked that way works.
 
 ### Display
 
-- `boldtext` — use bold text instead of reverse video for emphasis
-  throughout the interface. **(not yet implemented)**
+- `boldtext` — use bold text instead of reverse video for the title
+  bar, status bar and prompts, the shortcut keys in the help lines, line
+  numbers, the selection, and the `<`/`>` markers on a horizontally
+  scrolled line. Anything given its own color with a `set …color` line
+  keeps that color. `--boldtext` (`-D`) on the command line.
 - `bookstyle` — when justifying, treat any line that starts with
   whitespace as beginning a new paragraph. **(not yet implemented)**
 - `constantshow` — always show the cursor's line/column position in

@@ -148,8 +148,11 @@ default (still toggleable per-search with <code>M-R</code>).</li>
 <h3>Display</h3>
 
 <ul>
-<li><code>boldtext</code> — use bold text instead of reverse video for emphasis
-throughout the interface. <strong>(not yet implemented)</strong></li>
+<li><code>boldtext</code> — use bold text instead of reverse video for the title
+bar, status bar and prompts, the shortcut keys in the help lines, line
+numbers, the selection, and the <code>&lt;</code>/<code>&gt;</code> markers on a horizontally
+scrolled line. Anything given its own color with a <code>set …color</code> line
+keeps that color. <code>--boldtext</code> (<code>-D</code>) on the command line.</li>
 <li><code>bookstyle</code> — when justifying, treat any line that starts with
 whitespace as beginning a new paragraph. <strong>(not yet implemented)</strong></li>
 <li><code>constantshow</code> — always show the cursor's line/column position in
