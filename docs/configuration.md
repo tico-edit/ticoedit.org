@@ -175,15 +175,24 @@ tico's behavior. Everything not marked that way works.
 
 ### Files & safety
 
-- `allow_insecure_backup` — make a backup even when its permissions or
-  ownership can't be preserved (otherwise unsafe backups are skipped).
-  **(not yet implemented)**
-- `backup` — save a `~`-suffixed backup of a file's previous contents
-  before overwriting it. **(not yet implemented — no backup file is
-  ever written yet)**
-- `backupdir DIR` — write backup files into `DIR` instead of next to
-  the original. **(not yet implemented, for the same reason as
-  `backup`)**
+- `allow_insecure_backup` — when an old backup file is in the way and
+  can't be deleted, overwrite it in place instead of giving up on that
+  backup. Normally tico deletes any old backup and creates a brand-new
+  file, so it never writes through a symlink or other file someone left
+  at the backup's name.
+- `backup` — before overwriting an existing file, save its previous
+  contents as `NAME~` next to it (replacing any older `NAME~`). The
+  backup keeps the original's permissions, timestamps and, where
+  allowed, owner. If the backup can't be written there, tico tries
+  your home directory instead; if that fails too, it asks whether to
+  save without a backup. `-B` on the command line; `M-B` at the Write
+  Out prompt turns it on or off.
+- `backupdir DIR` — with `backup` on, keep backups in `DIR` instead of
+  next to each file. Each one is named after the file's full path with
+  every `/` turned into `!`, and numbered so earlier ones are never
+  replaced (`!home!me!notes.txt~`, then `~.1`, `~.2`, …). `DIR` must be
+  an existing directory, or tico refuses to start. `-C DIR` on the
+  command line. Setting this alone doesn't turn backups on.
 - `brackets STRING` — closing-bracket-like characters, considered
   alongside `punct` when justify decides where a sentence ends.
 - `locking` — create a vim-style `.swp` lock file while a buffer is
