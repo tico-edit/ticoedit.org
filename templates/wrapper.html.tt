@@ -7,11 +7,18 @@
     <script type="text/javascript" src="[% shjs %]/lang/sh_perl.min.js"></script>
     <link type="text/css" rel="stylesheet" href="[% shjs %]/css/sh_acid.css">
     <link type="text/css" rel="stylesheet" href="[% hatch %]/css/default.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
+    <style>
+      div.nx-header-title { font-family: 'VT323', monospace; font-size: 60px; top: -4px; }
+      .nx-cursor { display: inline-block; width: 0.45em; height: 0.62em; margin-left: 0.06em; background: currentColor; }
+    </style>
   </head>
   <body onload="sh_highlightDocument();">
     <div class="nx-header-flag-1"></div>
     <div class="nx-header-flag-2"></div>
-    <div class="nx-header-title"><a href="/"><img src="/images/toucan-icon.svg" alt="tico" style="height: 1em; width: auto; vertical-align: -0.1em;" border="0" /></a> [% IF sub %]<a href="[% sub.href %]">[% sub.text %]</a> [% END %][% IF h1 %][% h1 %][% ELSE %][% title %][% END %]</div>
+    <div class="nx-header-title"><a href="/"><img src="/images/toucan-icon.svg" alt="tico" style="height: 1em; width: auto; vertical-align: -0.1em;" border="0" /></a> [% IF sub %]<a href="[% sub.href %]">[% sub.text %]</a> [% END %][% heading = h1 ? h1 : title %][% heading %][% IF heading == 'tico' %]<span class="nx-cursor" aria-hidden="true"></span>[% END %]</div>
     [% content %]
     <div class="nx-footer">
       <p>
