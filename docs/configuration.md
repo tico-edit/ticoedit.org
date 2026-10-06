@@ -132,8 +132,14 @@ tico's behavior. Everything not marked that way works.
   keeps that color. `--boldtext` (`-D`) on the command line.
 - `bookstyle` — when justifying, treat any line that starts with
   whitespace as beginning a new paragraph. **(not yet implemented)**
-- `constantshow` — always show the cursor's line/column position in
-  the status area, without waiting for `^C`. **(not yet implemented)**
+- `constantshow` — after every keystroke, show the cursor's position
+  in the status bar, the same report `^C` gives: line, column and
+  character, each out of the total and as a percentage. A message
+  stays up for the keystroke that caused it, then gives way to the
+  position again. With `minibar`, the minibar shows `line,column` and
+  the code of the character under the cursor instead. Has no effect
+  under `zero`. `--constantshow` (`-c`) on the command line; `M-C`
+  toggles it (and, under `zero`, turns `zero` off).
 - `emptyline` — leave the line below the title bar blank instead of
   using it for text. **(not yet implemented)**
 - `guidestripe N` — draw a vertical guide bar in column `N`.

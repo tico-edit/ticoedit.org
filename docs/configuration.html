@@ -155,8 +155,14 @@ scrolled line. Anything given its own color with a <code>set …color</code> lin
 keeps that color. <code>--boldtext</code> (<code>-D</code>) on the command line.</li>
 <li><code>bookstyle</code> — when justifying, treat any line that starts with
 whitespace as beginning a new paragraph. <strong>(not yet implemented)</strong></li>
-<li><code>constantshow</code> — always show the cursor's line/column position in
-the status area, without waiting for <code>^C</code>. <strong>(not yet implemented)</strong></li>
+<li><code>constantshow</code> — after every keystroke, show the cursor's position
+in the status bar, the same report <code>^C</code> gives: line, column and
+character, each out of the total and as a percentage. A message
+stays up for the keystroke that caused it, then gives way to the
+position again. With <code>minibar</code>, the minibar shows <code>line,column</code> and
+the code of the character under the cursor instead. Has no effect
+under <code>zero</code>. <code>--constantshow</code> (<code>-c</code>) on the command line; <code>M-C</code>
+toggles it (and, under <code>zero</code>, turns <code>zero</code> off).</li>
 <li><code>emptyline</code> — leave the line below the title bar blank instead of
 using it for text. <strong>(not yet implemented)</strong></li>
 <li><code>guidestripe N</code> — draw a vertical guide bar in column <code>N</code>.</li>
