@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
     <style>
       div.nx-header-title { font-family: 'VT323', monospace; font-size: 60px; top: -4px; }
-      .nx-cursor { display: inline-block; width: 0.45em; height: 0.62em; margin-left: calc(0.06em + 0.2ch); background: currentColor; }
+      .nx-cursor { display: inline-block; width: 0.45em; height: 0.62em; margin-left: calc(0.06em + 0.2ch); background: currentColor; animation: nx-blink 1.06s steps(1) infinite; }
+      @keyframes nx-blink { 50% { visibility: hidden; } }
+      @media (prefers-reduced-motion: reduce) { .nx-cursor { animation: none; } }
     </style>
   </head>
   <body onload="sh_highlightDocument();">
