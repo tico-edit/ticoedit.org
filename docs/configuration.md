@@ -212,9 +212,14 @@ tico's behavior. Everything not marked that way works.
   read, or convert back on write; keep the bytes as-is.
 - `operatingdir DIR` — restrict file operations to this directory (and
   its subdirectories). **(not yet implemented)**
-- `positionlog` — remember the cursor position in each file you edit,
-  and restore it the next time you open that file. **(not yet
-  implemented — no position log is kept yet)**
+- `positionlog` — remember where the cursor was when you closed each
+  file, and put it back there the next time you open that file (from
+  the command line, or with `^R` into a new buffer). A `+LINE` on the
+  command line takes precedence. The last 200 files are kept in
+  `filepos_history` in nano's state directory (`~/.nano/` if that
+  exists, else `$XDG_DATA_HOME/nano/` or `~/.local/share/nano/`), in
+  nano's own format, so tico and nano share it. Off in restricted mode.
+  `-P` / `--positionlog` on the command line.
 - `preserve` — let the terminal's XON/XOFF flow control (`^Q`/`^S`)
   through instead of tico intercepting them. **(not yet implemented)**
 - `punct STRING` — characters that count as sentence-ending
