@@ -23,10 +23,10 @@ looks for one system-wide file and one user file:
   nano's own `--sysconfdir` build option. A distro packaging tico can
   point this elsewhere at build time, or disable system-wide lookup
   entirely.
-- User: the first of `$XDG_CONFIG_HOME/nano/nanorc`,
-  `~/.config/nano/nanorc`, or `~/.nanorc` that exists — the same search
-  order nano itself uses. Only the first one found is read; the others
-  are not merged in.
+- User: the first of `~/.nanorc`, `$XDG_CONFIG_HOME/nano/nanorc` (when
+  `XDG_CONFIG_HOME` is set), or `~/.config/nano/nanorc` that exists —
+  the same search order nano itself uses. Only the first one found is
+  read; the others are not merged in.
 
 Both files, if present, are read every time tico starts. `set`/`unset`
 lines and `bind`/`unbind` lines are applied exactly as nano applies
@@ -146,7 +146,8 @@ tico's behavior. Everything not marked that way works.
   using it for text. **(not yet implemented)**
 - `guidestripe N` — draw a vertical guide bar in column `N`.
 - `indicator` — show a position+portion scrollbar-style indicator
-  (colored by `scrollercolor`). **(not yet implemented)**
+  (colored by `scrollercolor`) in the rightmost column, beside the
+  text. Hidden on a screen too small for it.
 - `jumpyscrolling` — scroll the view a half-screen at a time instead of
   line by line: when the cursor would leave the screen (Up/Down past an
   edge, typing or moving off it), the view re-centers on the cursor. Page
@@ -457,7 +458,8 @@ that's the `ui.*`-is-ignored rule above in practice.
 Any other name is looked up on disk, in order:
 
 1. `$XDG_CONFIG_HOME/tico/themes/` (normally `~/.config/tico/themes/`)
-2. `$XDG_CONFIG_HOME/helix/themes/` (or `HELIX_RUNTIME/themes`, if set)
+2. `$XDG_CONFIG_HOME/helix/themes/`, then `$HELIX_RUNTIME/themes/` if
+   `HELIX_RUNTIME` is set
 3. wherever an installed Helix keeps its ~70 bundled themes
    (`/usr/share/helix/runtime/themes` and similar system paths)
 
