@@ -31,7 +31,7 @@
         [ <a href="/">home</a> | <a href="/configuration">configuration</a> | <a href="/faq">faq</a> | <a href="/mascot">mascot</a> ]
       </div>
       <div class="nx-banner">
-        <img src="/images/toucan.png" alt="tico the toucan" style="flex: 512 1 0;" border="0" />
+        <img src="/images/toucan.png" alt="Tico the Toucan" style="flex: 512 1 0;" border="0" />
         <img id="nx-crt" src="/images/hello-cxx-crt.png" alt="tico editing hello.cxx, a C++ program, on a white CRT monitor" style="flex: 921 1 0;" border="0" />
         <script>
           (function () {
@@ -52,7 +52,7 @@
           })();
         </script>
       </div>
-      <p>tico reads up to three configuration files, in this order, each one
+      <p>Tico reads up to three configuration files, in this order, each one
 able to override settings from the ones before it:</p>
 
 <ol>
@@ -66,11 +66,11 @@ these files.</p>
 
 <h2>nanorc: the same file nano reads</h2>
 
-<p>tico understands the same file format as GNU nano's <code>nanorc</code>, so an
+<p>Tico understands the same file format as GNU nano's <code>nanorc</code>, so an
 existing <code>~/.nanorc</code> mostly works unchanged. The full list of what a
 <code>set</code>/<code>unset</code> line can name is below, in "Configuration items" — you
 shouldn't need nano's own <code>nanorc(5)</code> man page just to configure tico,
-though it's a reasonable deeper reference if you already know it. It
+though it's a reasonable deeper reference if you already know it. Tico
 looks for one system-wide file and one user file:</p>
 
 <ul>
@@ -91,7 +91,7 @@ them.</p>
 <p><code>nanorc</code> also has a <code>syntax</code> block format for defining syntax
 highlighting (<code>syntax</code>, <code>color</code>, <code>icolor</code>, <code>header</code>, <code>magic</code>, <code>include</code>,
 <code>extendsyntax</code>, and the per-syntax <code>formatter</code>/<code>linter</code>/<code>comment</code>/
-<code>tabgives</code> lines). tico parses these — so a real-world nanorc full of
+<code>tabgives</code> lines). Tico parses these — so a real-world nanorc full of
 them still loads without errors — but they have no effect: tico
 highlights with its own built-in, tree-sitter-based language table
 instead of nano's regex engine. See "Syntax highlighting and themes"
@@ -285,7 +285,7 @@ open, and honor other editors' lock files.</li>
 with <code>^R</code>) into its own buffer instead of replacing the current one.</li>
 <li><code>noconvert</code> — don't convert a DOS/Mac-format file's line endings on
 read, or convert back on write; keep the bytes as-is.</li>
-<li><code>operatingdir DIR</code> — confine tico to <code>DIR</code> and what's below it. tico
+<li><code>operatingdir DIR</code> — confine tico to <code>DIR</code> and what's below it. Tico
 starts in <code>DIR</code> (so relative names, including those on the command
 line, are taken from there) and refuses to read a file from outside
 it ("Can't read file from outside of DIR") or write one there ("Can't
@@ -318,7 +318,7 @@ punctuation for justify (default <code>!.?</code>), consulted together with
 line's prefix (e.g. <code>&gt;</code>) when justifying quoted text.</li>
 <li><code>restricted</code> — not a nanorc setting (as in nano): restricted mode is
 turned on with <code>-R</code> / <code>--restricted</code>, or by running tico under a name
-that starts with <code>r</code> (like nano's <code>rnano</code>). tico then touches only
+that starts with <code>r</code> (like nano's <code>rnano</code>). Tico then touches only
 the files named on the command line. Read File (<code>^R</code>), Execute
 (<code>^T</code>), suspending, the spell checker, linter and formatter all say
 "This function is disabled in restricted mode". At the Write Out
@@ -378,7 +378,7 @@ bar's default styling is ultimately derived from this one.</li>
 
 <h2><code>~/.ticorc</code>: tico's own config file</h2>
 
-<p>tico adds one more file with no nano equivalent: <code>~/.ticorc</code> (or
+<p>Tico adds one more file with no nano equivalent: <code>~/.ticorc</code> (or
 <code>$XDG_CONFIG_HOME/tico/ticorc</code>, if that already exists). Its settings
 take precedence over anything set in a nanorc. It's an INI-style file
 with up to four sections.</p>
@@ -443,7 +443,7 @@ max_syntax_highlight_size = 8MB
 
 <p>This is the one area where tico deliberately does not behave like
 nano. nano highlights by matching regular expressions defined in
-nanorc <code>syntax</code>/<code>color</code>/<code>icolor</code> blocks. tico instead ships its own
+nanorc <code>syntax</code>/<code>color</code>/<code>icolor</code> blocks. Tico instead ships its own
 built-in table of languages, each backed by a tree-sitter grammar, and
 detects a buffer's language from its filename, shebang, or a modeline
 — not from anything in a nanorc. There is currently no way to add
@@ -457,7 +457,7 @@ Only a theme's syntax-scope entries are used; a theme's <code>ui.*</code> entrie
 (for things like the status bar or selection color) are ignored, since
 those follow nano's own <code>set titlecolor</code> and similar options instead.</p>
 
-<p>tico has nine themes built in, all named with a <code>tico-builtin-</code> prefix
+<p>Tico has nine themes built in, all named with a <code>tico-builtin-</code> prefix
 (reserved: a name starting with it is never looked for on disk, so it
 can't be shadowed by a same-named file elsewhere):</p>
 

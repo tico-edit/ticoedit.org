@@ -1,6 +1,6 @@
 # Tico the Toucan
 
-Meet **Tico the Toucan**, the colorful face of the Tico editor.
+Meet **Tico the Toucan**, the colorful face of the tico editor.
 
 Tico is a small terminal editor with an appreciation for the way
 computers used to feel: straightforward, approachable, and a little bit
@@ -17,7 +17,7 @@ late 1980s and early 1990s.
 Tico the editor may run happily on a modern terminal, but its mascot
 looks equally at home beside a beige CRT.
 
-The toucan also gives Tico an identity independent of the language it
+The toucan also gives tico an identity independent of the language it
 happens to be implemented in. Tico isn't a "Rust editor"; it's a text
 editor, and Tico the Toucan is here to represent the editor rather than
 its implementation.
@@ -26,9 +26,9 @@ its implementation.
 
 Mostly because toucans are great.
 
-The name came first: **Tico**, short for **Terminal Interactive
+The name came first: **tico**, short for **Terminal Interactive
 COmposer**, in the tradition of Pico's original **PIne COmposer** name.
-Once Tico needed a mascot, "Tico the Toucan" had the right sound---and
+Once tico needed a mascot, "Tico the Toucan" had the right sound---and
 the bird's enormous, colorful bill makes for a wonderfully recognizable
 character.
 

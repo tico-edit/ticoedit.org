@@ -1,6 +1,6 @@
 # Configuration
 
-tico reads up to three configuration files, in this order, each one
+Tico reads up to three configuration files, in this order, each one
 able to override settings from the ones before it:
 
 1. a system-wide `nanorc`
@@ -12,11 +12,11 @@ these files.
 
 ## nanorc: the same file nano reads
 
-tico understands the same file format as GNU nano's `nanorc`, so an
+Tico understands the same file format as GNU nano's `nanorc`, so an
 existing `~/.nanorc` mostly works unchanged. The full list of what a
 `set`/`unset` line can name is below, in "Configuration items" — you
 shouldn't need nano's own `nanorc(5)` man page just to configure tico,
-though it's a reasonable deeper reference if you already know it. It
+though it's a reasonable deeper reference if you already know it. Tico
 looks for one system-wide file and one user file:
 
 - System-wide: `$(sysconfdir)/nanorc`, normally `/etc/nanorc`, matching
@@ -35,7 +35,7 @@ them.
 `nanorc` also has a `syntax` block format for defining syntax
 highlighting (`syntax`, `color`, `icolor`, `header`, `magic`, `include`,
 `extendsyntax`, and the per-syntax `formatter`/`linter`/`comment`/
-`tabgives` lines). tico parses these — so a real-world nanorc full of
+`tabgives` lines). Tico parses these — so a real-world nanorc full of
 them still loads without errors — but they have no effect: tico
 highlights with its own built-in, tree-sitter-based language table
 instead of nano's regex engine. See "Syntax highlighting and themes"
@@ -220,7 +220,7 @@ tico's behavior. Everything not marked that way works.
   with `^R`) into its own buffer instead of replacing the current one.
 - `noconvert` — don't convert a DOS/Mac-format file's line endings on
   read, or convert back on write; keep the bytes as-is.
-- `operatingdir DIR` — confine tico to `DIR` and what's below it. tico
+- `operatingdir DIR` — confine tico to `DIR` and what's below it. Tico
   starts in `DIR` (so relative names, including those on the command
   line, are taken from there) and refuses to read a file from outside
   it ("Can't read file from outside of DIR") or write one there ("Can't
@@ -253,7 +253,7 @@ tico's behavior. Everything not marked that way works.
   line's prefix (e.g. `> `) when justifying quoted text.
 - `restricted` — not a nanorc setting (as in nano): restricted mode is
   turned on with `-R` / `--restricted`, or by running tico under a name
-  that starts with `r` (like nano's `rnano`). tico then touches only
+  that starts with `r` (like nano's `rnano`). Tico then touches only
   the files named on the command line. Read File (`^R`), Execute
   (`^T`), suspending, the spell checker, linter and formatter all say
   "This function is disabled in restricted mode". At the Write Out
@@ -310,7 +310,7 @@ set of named hues (`pink`, `purple`, `mauve`, `lagoon`, `mint`, `lime`,
 
 ## `~/.ticorc`: tico's own config file
 
-tico adds one more file with no nano equivalent: `~/.ticorc` (or
+Tico adds one more file with no nano equivalent: `~/.ticorc` (or
 `$XDG_CONFIG_HOME/tico/ticorc`, if that already exists). Its settings
 take precedence over anything set in a nanorc. It's an INI-style file
 with up to four sections.
@@ -377,7 +377,7 @@ max_syntax_highlight_size = 8MB
 
 This is the one area where tico deliberately does not behave like
 nano. nano highlights by matching regular expressions defined in
-nanorc `syntax`/`color`/`icolor` blocks. tico instead ships its own
+nanorc `syntax`/`color`/`icolor` blocks. Tico instead ships its own
 built-in table of languages, each backed by a tree-sitter grammar, and
 detects a buffer's language from its filename, shebang, or a modeline
 — not from anything in a nanorc. There is currently no way to add
@@ -391,7 +391,7 @@ Only a theme's syntax-scope entries are used; a theme's `ui.*` entries
 (for things like the status bar or selection color) are ignored, since
 those follow nano's own `set titlecolor` and similar options instead.
 
-tico has nine themes built in, all named with a `tico-builtin-` prefix
+Tico has nine themes built in, all named with a `tico-builtin-` prefix
 (reserved: a name starting with it is never looked for on disk, so it
 can't be shadowed by a same-named file elsewhere):
 

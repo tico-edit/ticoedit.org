@@ -31,7 +31,7 @@
         [ <a href="/">home</a> | <a href="/configuration">configuration</a> | <a href="/faq">faq</a> | <a href="/mascot">mascot</a> ]
       </div>
       <div class="nx-banner">
-        <img src="/images/toucan.png" alt="tico the toucan" style="flex: 512 1 0;" border="0" />
+        <img src="/images/toucan.png" alt="Tico the Toucan" style="flex: 512 1 0;" border="0" />
         <img id="nx-crt" src="/images/hello-cxx-crt.png" alt="tico editing hello.cxx, a C++ program, on a white CRT monitor" style="flex: 921 1 0;" border="0" />
         <script>
           (function () {
