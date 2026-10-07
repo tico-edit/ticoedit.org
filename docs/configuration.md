@@ -148,7 +148,12 @@ tico's behavior. Everything not marked that way works.
 - `indicator` — show a position+portion scrollbar-style indicator
   (colored by `scrollercolor`). **(not yet implemented)**
 - `jumpyscrolling` — scroll the view a half-screen at a time instead of
-  line by line. **(not yet implemented)**
+  line by line: when the cursor would leave the screen (Up/Down past an
+  edge, typing or moving off it), the view re-centers on the cursor. Page
+  Up/Down then start from the line on the top row and leave the cursor at
+  the start of the top row, as Pico does, and Go To Line centers its line
+  even near the end of the file. `-j` / `--jumpyscrolling` on the command
+  line.
 - `linenumbers` — show line numbers to the left of the text (colored by
   `numbercolor`).
 - `matchbrackets STRING` — the brackets `M-]` (go to the matching
