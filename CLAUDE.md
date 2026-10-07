@@ -53,7 +53,9 @@ on this site.
 
 Every page shows the toucan beside a white CRT monitor. The CRT shows tico editing
 a small `hello.EXT` program, and a script in `templates/wrapper.html.tt` picks one
-at random on each page load. Without JavaScript the page shows `hello-cxx-crt.png`.
+at random on each page load. Adding `?hello=EXT` to a page's URL (e.g. `/?hello=rs`)
+shows that one instead; an unknown EXT falls back to random. Without JavaScript the
+page shows `hello-cxx-crt.png`.
 
 The support files are in `extra/crt/`:
 
@@ -81,5 +83,6 @@ To add a language:
    is right. If highlighting is wrong, it's probably a tico bug worth reporting.
 4. Add `['EXT', 'a LANGUAGE program']` to the `hellos` list in
    `templates/wrapper.html.tt` (the second item completes the image's alt text),
-   then run `./build.pl`.
+   then run `./build.pl`. Load `/?hello=EXT` under `plackup test.psgi` to see it on
+   the page.
 5. Commit the source file, the PNG, the template, and the regenerated `.html`.

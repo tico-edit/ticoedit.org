@@ -42,6 +42,10 @@
               ['f', 'a Fortran 77 program'], ['pas', 'a Pascal program']
             ];
             var h = hellos[Math.floor(Math.random() * hellos.length)];
+            var m = /[?&]hello=([^&#]*)/.exec(location.search);
+            for (var i = 0; m && i < hellos.length; i++) {
+              if (hellos[i][0] === decodeURIComponent(m[1])) h = hellos[i];
+            }
             var img = document.getElementById('nx-crt');
             img.src = '/images/hello-' + h[0] + '-crt.png';
             img.alt = 'tico editing hello.' + h[0] + ', ' + h[1] + ', on a white CRT monitor';
