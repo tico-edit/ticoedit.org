@@ -15,6 +15,7 @@
       .nx-cursor { display: inline-block; width: 0.45em; height: 0.62em; margin-left: calc(0.06em + 0.2ch); background: currentColor; animation: nx-blink 1.06s steps(1) infinite; }
       @keyframes nx-blink { 50% { visibility: hidden; } }
       @media (prefers-reduced-motion: reduce) { .nx-cursor { animation: none; } }
+      body > h2, body > h3, body > p { max-width: 733px; margin-left: auto; margin-right: auto; }
     </style>
   </head>
   <body onload="sh_highlightDocument();">
@@ -26,7 +27,40 @@
 <img src="images/hello-cxx-crt.png" alt="tico editing hello.cxx, a C++ program, on a white CRT monitor" style="flex: 921 1 0; min-width: 0; width: 100%; height: auto;" border="0" />
 </div>
 
-<p>Website for the tico editor project.</p>
+<h2>A friendly editor for the terminal</h2>
+
+<p><strong>tico</strong> is a small, easy-to-use terminal text editor for people who
+want to edit a file and get on with what they were doing.</p>
+
+<p>If you already know <strong>nano</strong>, tico should feel familiar immediately.
+Common commands and key bindings follow nano conventions, so your muscle
+memory comes with you. Tico also understands nano-style configuration,
+making it easy to bring an existing setup along rather than learning a
+new editor from scratch.</p>
+
+<h3>Syntax highlighting without the regex archaeology</h3>
+
+<p>Tico includes syntax highlighting for common programming and markup
+languages out of the box, including <strong>Perl, C, C++, HTML, and INI</strong>.</p>
+
+<p>Highlighting is syntax-aware rather than a collection of regular
+expressions you have to maintain yourself. That's particularly useful
+for dynamic languages such as Perl, where strings, quote-like operators,
+regular expressions, heredocs, and embedded languages can make
+regex-based highlighting complicated and fragile.</p>
+
+<p>Tico handles that for you. Open a Perl file and it looks like Perl.</p>
+
+<p>It can even recognize embedded languages---for example, SQL inside a
+Perl heredoc can be highlighted as SQL.</p>
+
+<h3>Familiar by design</h3>
+
+<p>Tico isn't trying to turn text editing into a new skill to master. It's
+meant to provide the straightforward experience that makes nano useful,
+while adding the features you'd expect from a modern source-code editor.</p>
+
+<p>If you know nano, you already know how to use tico.</p>
 
 
     <div class="nx-footer">
@@ -38,7 +72,7 @@
             <a href="https://perlwasm.org">perlwasm.org</a> |
             <a href="https://uperl.github.io">uperl</a>
         ]
-        Copyright &copy; 2022 Graham Ollis
+        Copyright &copy; 2026 Graham Ollis
       </p>
     </div>
   </body>
