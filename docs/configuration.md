@@ -231,8 +231,15 @@ tico's behavior. Everything not marked that way works.
   exists, else `$XDG_DATA_HOME/nano/` or `~/.local/share/nano/`), in
   nano's own format, so tico and nano share it. Off in restricted mode.
   `-P` / `--positionlog` on the command line.
-- `preserve` — let the terminal's XON/XOFF flow control (`^Q`/`^S`)
-  through instead of tico intercepting them. **(not yet implemented)**
+- `preserve` — leave the terminal's XON/XOFF flow control on, so `^S`
+  stops the terminal's output and `^Q` resumes it, instead of tico
+  receiving them as keys (they can still be typed with `M-V`). `-p` /
+  `--preserve` on the command line also unbinds tico's own default `^S`
+  (Save) and `^Q` (search backward; Discard Buffer at the Write Out
+  prompt), as nano does; with `set preserve` they stay bound, though the
+  terminal gets them first. Ignored with `--modernbindings`, which needs
+  `^Q` and `^S`. Has no effect on Windows, whose console has no flow
+  control.
 - `punct STRING` — characters that count as sentence-ending
   punctuation for justify (default `!.?`), consulted together with
   `brackets`.

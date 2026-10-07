@@ -296,8 +296,15 @@ command line takes precedence. The last 200 files are kept in
 exists, else <code>$XDG_DATA_HOME/nano/</code> or <code>~/.local/share/nano/</code>), in
 nano's own format, so tico and nano share it. Off in restricted mode.
 <code>-P</code> / <code>--positionlog</code> on the command line.</li>
-<li><code>preserve</code> — let the terminal's XON/XOFF flow control (<code>^Q</code>/<code>^S</code>)
-through instead of tico intercepting them. <strong>(not yet implemented)</strong></li>
+<li><code>preserve</code> — leave the terminal's XON/XOFF flow control on, so <code>^S</code>
+stops the terminal's output and <code>^Q</code> resumes it, instead of tico
+receiving them as keys (they can still be typed with <code>M-V</code>). <code>-p</code> /
+<code>--preserve</code> on the command line also unbinds tico's own default <code>^S</code>
+(Save) and <code>^Q</code> (search backward; Discard Buffer at the Write Out
+prompt), as nano does; with <code>set preserve</code> they stay bound, though the
+terminal gets them first. Ignored with <code>--modernbindings</code>, which needs
+<code>^Q</code> and <code>^S</code>. Has no effect on Windows, whose console has no flow
+control.</li>
 <li><code>punct STRING</code> — characters that count as sentence-ending
 punctuation for justify (default <code>!.?</code>), consulted together with
 <code>brackets</code>.</li>
