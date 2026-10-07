@@ -32,7 +32,21 @@
       </div>
       <div class="nx-banner">
         <img src="/images/toucan.png" alt="tico the toucan" style="flex: 512 1 0;" border="0" />
-        <img src="/images/hello-cxx-crt.png" alt="tico editing hello.cxx, a C++ program, on a white CRT monitor" style="flex: 921 1 0;" border="0" />
+        <img id="nx-crt" src="/images/hello-cxx-crt.png" alt="tico editing hello.cxx, a C++ program, on a white CRT monitor" style="flex: 921 1 0;" border="0" />
+        <script>
+          (function () {
+            var hellos = [
+              ['cxx', 'a C++ program'], ['pl', 'a Perl program'], ['rs', 'a Rust program'],
+              ['c', 'a C program'], ['go', 'a Go program'], ['rb', 'a Ruby program'],
+              ['html', 'an HTML page'], ['css', 'a CSS stylesheet'],
+              ['f', 'a Fortran 77 program'], ['pas', 'a Pascal program']
+            ];
+            var h = hellos[Math.floor(Math.random() * hellos.length)];
+            var img = document.getElementById('nx-crt');
+            img.src = '/images/hello-' + h[0] + '-crt.png';
+            img.alt = 'tico editing hello.' + h[0] + ', ' + h[1] + ', on a white CRT monitor';
+          })();
+        </script>
       </div>
       <p>tico reads up to three configuration files, in this order, each one
 able to override settings from the ones before it:</p>
