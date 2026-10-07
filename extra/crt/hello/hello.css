@@ -1,0 +1,18 @@
+/* hello.css: a friendly greeting from tico. */
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #fdfcf8;
+}
+
+.hello {
+  max-width: 40em;
+  margin: 4em auto;
+  text-align: center;
+}
+
+.hello .name {
+  color: #e8731a;
+  font-weight: bold;
+}

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="964" height="698" viewBox="-2 -2 964 698">
+  <defs>
+    <linearGradient id="case" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdfcf8"/>
+      <stop offset="1" stop-color="#e4e0d5"/>
+    </linearGradient>
+    <linearGradient id="recess" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c9c4b7"/>
+      <stop offset="1" stop-color="#ebe8df"/>
+    </linearGradient>
+    <linearGradient id="neck" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cfcabe"/>
+      <stop offset="1" stop-color="#e6e2d8"/>
+    </linearGradient>
+    <radialGradient id="glare" cx="0.3" cy="0.2" r="0.8">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="glass"><rect x="40" y="38" width="880" height="528" rx="10"/></clipPath>
+  </defs>
+  <!-- stand -->
+  <polygon points="400,638 560,638 584,670 376,670" fill="url(#neck)" stroke="#b9b4a7" stroke-width="2"/>
+  <rect x="290" y="664" width="380" height="28" rx="10" fill="url(#case)" stroke="#b9b4a7" stroke-width="2"/>
+  <!-- case -->
+  <rect x="0" y="0" width="960" height="640" rx="30" fill="url(#case)" stroke="#b9b4a7" stroke-width="2"/>
+  <rect x="20" y="18" width="920" height="568" rx="20" fill="url(#recess)"/>
+  <rect x="30" y="28" width="900" height="548" rx="14" fill="#141414"/>
+  <!-- screen -->
+  <g clip-path="url(#glass)">
+    <image x="40" y="38" width="880" height="528" xlink:href="@SHOT@"/>
+    <rect x="40" y="38" width="880" height="528" fill="url(#glare)"/>
+  </g>
+  <!-- badge and power light -->
+  <image x="44" y="598" width="28" height="28" xlink:href="toucan-icon.svg"/>
+  <text x="80" y="620" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#9c978a">tico</text>
+  <rect x="846" y="606" width="40" height="12" rx="3" fill="#d6d2c6" stroke="#bdb8ab"/>
+  <circle cx="906" cy="612" r="5" fill="#4cd964" stroke="#2f9e44" stroke-width="1"/>
+</svg>
