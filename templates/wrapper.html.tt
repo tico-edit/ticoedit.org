@@ -15,16 +15,27 @@
       .nx-cursor { display: inline-block; width: 0.45em; height: 0.62em; margin-left: calc(0.06em + 0.2ch); background: currentColor; animation: nx-blink 1.06s steps(1) infinite; }
       @keyframes nx-blink { 50% { visibility: hidden; } }
       @media (prefers-reduced-motion: reduce) { .nx-cursor { animation: none; } }
-      [%- IF (h1 ? h1 : title) == 'tico' %]
-      body > h2, body > h3, body > p { max-width: 733px; margin-left: auto; margin-right: auto; }
-      [%- END %]
+      div.nx-content { max-width: 733px; margin: 0 auto; }
+      div.nx-content img { max-width: 100%; height: auto; }
+      div.nx-nav { text-align: center; margin-bottom: 16px; }
+      div.nx-banner { display: flex; align-items: flex-start; gap: 16px; }
+      div.nx-banner img { min-width: 0; width: 100%; }
     </style>
   </head>
   <body onload="sh_highlightDocument();">
     <div class="nx-header-flag-1"></div>
     <div class="nx-header-flag-2"></div>
     <div class="nx-header-title"><a href="/"><img src="/images/toucan-icon.svg" alt="tico" style="height: 1em; width: auto; vertical-align: -0.1em;" border="0" /></a> [% IF sub %]<a href="[% sub.href %]">[% sub.text %]</a> [% END %][% heading = h1 ? h1 : title %][% heading %][% IF heading == 'tico' %]<span class="nx-cursor" aria-hidden="true"></span>[% END %]</div>
-    [% content %]
+    <div class="nx-content">
+      <div class="nx-nav">
+        [ <a href="/">home</a> | <a href="/configuration">configuration</a> | <a href="/faq">faq</a> | <a href="/mascot">mascot</a> ]
+      </div>
+      <div class="nx-banner">
+        <img src="/images/toucan.png" alt="tico the toucan" style="flex: 512 1 0;" border="0" />
+        <img src="/images/hello-cxx-crt.png" alt="tico editing hello.cxx, a C++ program, on a white CRT monitor" style="flex: 921 1 0;" border="0" />
+      </div>
+      [% content %]
+    </div>
     <div class="nx-footer">
       <p>
         [%- IF site.links %]
