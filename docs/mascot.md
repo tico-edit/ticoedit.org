@@ -12,7 +12,8 @@ anything else.
 
 Tico the Toucan is deliberately drawn with a retro-computing aesthetic,
 inspired by the colorful mascots, icons, and computer artwork of the
-late 1980s and early 1990s.
+late 1980s and early 1990s. Tico the Toucan was created by
+Pretianahart.
 
 Tico the editor may run happily on a modern terminal, but its mascot
 looks equally at home beside a beige CRT.
