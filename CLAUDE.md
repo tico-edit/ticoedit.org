@@ -37,6 +37,16 @@ What the build does:
   committed HTML as-is and does not run the build.
 - Don't hand-edit `test.psgi` or anything under `docs/pod/`. The build overwrites them.
 
+## Capitalization
+
+- The editor is "tico", lowercase, except at the start of a sentence ("Tico reads…").
+- The mascot is always "Tico", or "Tico the Toucan" in full, including in image alt
+  text.
+- Headings that are just the site name (`# tico`, `# tico - Not Found!`) stay
+  lowercase. `templates/wrapper.html.tt` compares the heading to `tico` exactly.
+- Code, such as `tico-builtin-*`, `[tico]` and `~/.ticorc`, is spelled as tico
+  spells it.
+
 ## Local testing
 
 `test.psgi` is a PSGI app (using `Plack::App::GitHubPages::Faux`) that serves `docs/`
