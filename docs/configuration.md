@@ -209,9 +209,11 @@ tico's behavior. Everything not marked that way works.
 - `backupdir DIR` — with `backup` on, keep backups in `DIR` instead of
   next to each file. Each one is named after the file's full path with
   every `/` turned into `!`, and numbered so earlier ones are never
-  replaced (`!home!me!notes.txt~`, then `~.1`, `~.2`, …). `DIR` must be
-  an existing directory, or tico refuses to start. `-C DIR` on the
-  command line. Setting this alone doesn't turn backups on.
+  replaced (`!home!me!notes.txt~`, then `~.1`, `~.2`, …). On Windows
+  the `\` separators and the drive's `:` become `!` as well
+  (`C!!Users!me!notes.txt~`). `DIR` must be an existing directory, or
+  tico refuses to start. `-C DIR` on the command line. Setting this
+  alone doesn't turn backups on.
 - `brackets STRING` — closing-bracket-like characters, considered
   alongside `punct` when justify decides where a sentence ends.
 - `locking` — create a vim-style `.swp` lock file while a buffer is
