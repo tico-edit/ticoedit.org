@@ -1,4 +1,4 @@
-# Configuration files
+# Configuration
 
 tico reads up to three configuration files, in this order, each one
 able to override settings from the ones before it:
