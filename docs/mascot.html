@@ -47,8 +47,18 @@
               if (hellos[i][0] === decodeURIComponent(m[1])) h = hellos[i];
             }
             var img = document.getElementById('nx-crt');
-            img.src = '/images/hello-' + h[0] + '-crt.png';
-            img.alt = 'tico editing hello.' + h[0] + ', ' + h[1] + ', on a white CRT monitor';
+            function show(h) {
+              img.src = '/images/hello-' + h[0] + '-crt.png';
+              img.alt = 'tico editing hello.' + h[0] + ', ' + h[1] + ', on a white CRT monitor';
+            }
+            show(h);
+            img.style.cursor = 'pointer';
+            img.title = 'Click for another language';
+            img.addEventListener('click', function () {
+              var n;
+              do { n = hellos[Math.floor(Math.random() * hellos.length)]; } while (n === h);
+              show(h = n);
+            });
           })();
         </script>
       </div>
