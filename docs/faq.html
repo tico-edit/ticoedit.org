@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Frequently Asked Questions</title>
+    <script type="text/javascript" src="https://shjs.wdlabs.com/sh_main.min.js"></script>
+    <script type="text/javascript" src="https://shjs.wdlabs.com/lang/sh_perl.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://shjs.wdlabs.com/css/sh_acid.css">
+    <link type="text/css" rel="stylesheet" href="https://hatch.wdlabs.com/css/default.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
+    <style>
+      div.nx-header-title { font-family: 'VT323', monospace; font-size: 60px; top: -4px; }
+      .nx-cursor { display: inline-block; width: 0.45em; height: 0.62em; margin-left: calc(0.06em + 0.2ch); background: currentColor; animation: nx-blink 1.06s steps(1) infinite; }
+      @keyframes nx-blink { 50% { visibility: hidden; } }
+      @media (prefers-reduced-motion: reduce) { .nx-cursor { animation: none; } }
+      div.nx-content { max-width: 733px; margin: 0 auto; }
+      div.nx-content img { max-width: 100%; height: auto; }
+      div.nx-nav { text-align: center; margin-bottom: 16px; }
+      div.nx-banner { display: flex; align-items: flex-start; gap: 16px; }
+      div.nx-banner img { min-width: 0; width: 100%; }
+    </style>
+  </head>
+  <body onload="sh_highlightDocument();">
+    <div class="nx-header-flag-1"></div>
+    <div class="nx-header-flag-2"></div>
+    <div class="nx-header-title"><a href="/"><img src="/images/toucan-icon.svg" alt="tico" style="height: 1em; width: auto; vertical-align: -0.1em;" border="0" /></a> Frequently Asked Questions</div>
+    <div class="nx-content">
+      <div class="nx-nav">
+        [ <a href="/">home</a> | <a href="/configuration">configuration</a> | <a href="/faq">faq</a> | <a href="/mascot">mascot</a> ]
+      </div>
+      <div class="nx-banner">
+        <img src="/images/toucan.png" alt="tico the toucan" style="flex: 512 1 0;" border="0" />
+        <img id="nx-crt" src="/images/hello-cxx-crt.png" alt="tico editing hello.cxx, a C++ program, on a white CRT monitor" style="flex: 921 1 0;" border="0" />
+        <script>
+          (function () {
+            var hellos = [
+              ['cxx', 'a C++ program'], ['pl', 'a Perl program'], ['rs', 'a Rust program'],
+              ['c', 'a C program'], ['go', 'a Go program'], ['rb', 'a Ruby program'],
+              ['html', 'an HTML page'], ['css', 'a CSS stylesheet'],
+              ['f', 'a Fortran 77 program'], ['pas', 'a Pascal program']
+            ];
+            var h = hellos[Math.floor(Math.random() * hellos.length)];
+            var m = /[?&]hello=([^&#]*)/.exec(location.search);
+            for (var i = 0; m && i < hellos.length; i++) {
+              if (hellos[i][0] === decodeURIComponent(m[1])) h = hellos[i];
+            }
+            var img = document.getElementById('nx-crt');
+            img.src = '/images/hello-' + h[0] + '-crt.png';
+            img.alt = 'tico editing hello.' + h[0] + ', ' + h[1] + ', on a white CRT monitor';
+          })();
+        </script>
+      </div>
+      <h2>1. Is Tico the Toucan a Dinosaur?</h2>
+
+<p>Yes, as with all birds, Tico is a Dinosaur.</p>
+
+
+    </div>
+    <div class="nx-footer">
+      <p>
+        [
+            <a href="https://www.wdlabs.com">www.wdlabs.com</a> |
+            <a href="https://alienfile.org">alienfile.org</a> |
+            <a href="https://pl.atypus.org">pl.atypus.org</a> |
+            <a href="https://perlwasm.org">perlwasm.org</a> |
+            <a href="https://uperl.github.io">uperl</a>
+        ]
+        Copyright &copy; 2026 Graham Ollis
+      </p>
+    </div>
+  </body>
+</html>
