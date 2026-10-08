@@ -1,1 +1,1 @@
-T<download.json>
+T<download.json|downloads>

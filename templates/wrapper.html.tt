@@ -20,6 +20,16 @@
       div.nx-nav { text-align: center; margin-bottom: 16px; }
       div.nx-banner { display: flex; align-items: flex-start; gap: 16px; }
       div.nx-banner img { min-width: 0; width: 100%; }
+      table.downloads { width: 100%; border-collapse: collapse; margin: 16px 0; }
+      table.downloads th, table.downloads td { padding: 6px 10px; text-align: left; border-bottom: 1px solid #dddddd; }
+      table.downloads th { background: #eeeeee; font-weight: bold; }
+      table.downloads td:first-child { overflow-wrap: anywhere; }
+      table.downloads tbody tr:hover { background: #f5f5f5; }
+      @media (prefers-color-scheme: dark) {
+        table.downloads th, table.downloads td { border-bottom-color: #2a2d34; }
+        table.downloads th { background: #2a2d34; }
+        table.downloads tbody tr:hover { background: #1f2228; }
+      }
     </style>
   </head>
   <body onload="sh_highlightDocument();">
