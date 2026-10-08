@@ -6,7 +6,7 @@ use Getopt::Long qw( GetOptions );
 use HTTP::Tiny;
 use JSON::MaybeXS ();
 use Path::Tiny qw( path );
-use XOR;
+use XOR 0.11;
 
 GetOptions(
   'release' => \my $release,
