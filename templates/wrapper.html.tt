@@ -15,10 +15,10 @@
       .nx-cursor { display: inline-block; width: 0.45em; height: 0.62em; margin-left: calc(0.06em + 0.2ch); background: currentColor; animation: nx-blink 1.06s steps(1) infinite; }
       @keyframes nx-blink { 50% { visibility: hidden; } }
       @media (prefers-reduced-motion: reduce) { .nx-cursor { animation: none; } }
-      div.nx-content { max-width: 733px; margin: 0 auto; }
+      div.nx-content { max-width: 820px; margin: 0 auto; }
       div.nx-content img { max-width: 100%; height: auto; }
       div.nx-nav { text-align: center; margin-bottom: 16px; }
-      div.nx-banner { display: flex; align-items: flex-start; gap: 16px; }
+      div.nx-banner { display: flex; align-items: flex-start; gap: 80px; margin: 0 11.5px; }
       div.nx-banner img { min-width: 0; width: 100%; }
       table.downloads { width: 100%; border-collapse: collapse; margin: 16px 0; }
       table.downloads th, table.downloads td { padding: 6px 10px; text-align: left; border-bottom: 1px solid #dddddd; }
