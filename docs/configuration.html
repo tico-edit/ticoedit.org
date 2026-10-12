@@ -145,8 +145,9 @@ tico's behavior. Everything not marked that way works.</p>
 <ul>
 <li><code>afterends</code> — with word-selection movement, stop at the end of a
 word instead of its start. <strong>(not yet implemented)</strong></li>
-<li><code>atblanks</code> — when <code>softwrap</code> is on, prefer to break lines at
-whitespace rather than mid-word. <strong>(not yet implemented)</strong></li>
+<li><code>atblanks</code> — when <code>softwrap</code> is on, break a wrapped line after the
+last blank that fits on the row rather than mid-word (a word wider
+than the whole row still breaks mid-word).</li>
 <li><code>autoindent</code> — indent a newly created line to match the previous
 line's leading whitespace.</li>
 <li><code>breaklonglines</code> — automatically hard-wrap the current line once it
@@ -179,7 +180,9 @@ that report it as Backspace. <strong>(not yet implemented)</strong></li>
 <li><code>smarthome</code> — pressing Home moves to the first non-blank character
 first, then to column 1 on a second press.</li>
 <li><code>softwrap</code> — display an overlong line across multiple screen rows
-instead of scrolling it horizontally. <strong>(not yet implemented)</strong></li>
+instead of scrolling it horizontally. Up/Down and Page Up/Down then
+move by screen row, and Home/End go to the start/end of the current
+row first, then of the whole line. Toggled with <code>M-S</code>.</li>
 <li><code>tabstospaces</code> — convert a typed Tab into the equivalent number of
 spaces.</li>
 <li><code>trimblanks</code> — trim trailing spaces from a line before hard-wrapping

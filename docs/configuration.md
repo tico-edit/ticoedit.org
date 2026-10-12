@@ -66,8 +66,9 @@ tico's behavior. Everything not marked that way works.
 
 - `afterends` — with word-selection movement, stop at the end of a
   word instead of its start. **(not yet implemented)**
-- `atblanks` — when `softwrap` is on, prefer to break lines at
-  whitespace rather than mid-word. **(not yet implemented)**
+- `atblanks` — when `softwrap` is on, break a wrapped line after the
+  last blank that fits on the row rather than mid-word (a word wider
+  than the whole row still breaks mid-word).
 - `autoindent` — indent a newly created line to match the previous
   line's leading whitespace.
 - `breaklonglines` — automatically hard-wrap the current line once it
@@ -100,7 +101,9 @@ tico's behavior. Everything not marked that way works.
 - `smarthome` — pressing Home moves to the first non-blank character
   first, then to column 1 on a second press.
 - `softwrap` — display an overlong line across multiple screen rows
-  instead of scrolling it horizontally. **(not yet implemented)**
+  instead of scrolling it horizontally. Up/Down and Page Up/Down then
+  move by screen row, and Home/End go to the start/end of the current
+  row first, then of the whole line. Toggled with `M-S`.
 - `tabstospaces` — convert a typed Tab into the equivalent number of
   spaces.
 - `trimblanks` — trim trailing spaces from a line before hard-wrapping
