@@ -179,8 +179,14 @@ tico's behavior. Everything not marked that way works.
   In help text the arrow keys then move the cursor through the text,
   scrolling only when it reaches the edge, instead of scrolling the
   view line by line.
-- `stateflags` — show file-state indicators (modified, DOS/Mac format,
-  etc.) on the title bar. **(not yet implemented)**
+- `stateflags` — in the title bar's upper-right corner, where
+  "Modified" would go, show a letter for each of five states: `I`
+  (auto-indent on), `M` (the mark is set), `L` (hard-wrapping of long
+  lines on), `R` (a macro is being recorded) and `S` (soft-wrapping
+  on), or a blank when that state is off. A modified file is then
+  marked with a `*` after its name instead. With `minibar`, the letters
+  appear on the minibar, and toggling one of the three options
+  no longer posts a message, since its letter shows the change.
 - `syntax_highlighting` — tico-only, not a nano option: turn tico's own
   syntax highlighting on or off globally (on by default; also
   toggleable at runtime with `M-Y`). See "Syntax highlighting and
