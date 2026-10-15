@@ -45,7 +45,9 @@ a `t`.  It doesn't mean anything, but it is just as short as either `pico` or `n
 
 ## How do you pronounce pico?
 
-...
+Most people pronounce `pico` /ˈpiːkoʊ/ (PEE-koh), like the SI prefix (as in picosecond) or the "pico" in pico de gallo.
+Since `pico` is short for PIne COmposer, though, I think it should be pronounced with a long "i" as in "pine":
+/ˈpaɪkoʊ/ (PIE-koh).
 
 ## How do you pronounce tico?
 
