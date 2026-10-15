@@ -64,8 +64,10 @@ tico's behavior. Everything not marked that way works.
 
 ### Editing behavior
 
-- `afterends` — with word-selection movement, stop at the end of a
-  word instead of its start. **(not yet implemented)**
+- `afterends` — make `^Right` (next word) stop at the end of a word
+  instead of at the start of the next one, both in the text and at the
+  prompts, and make `^Del` delete up to that word end.
+  `--afterends` (`-y`) on the command line.
 - `atblanks` — when `softwrap` is on, break a wrapped line after the
   last blank that fits on the row rather than mid-word (a word wider
   than the whole row still breaks mid-word).
@@ -108,14 +110,16 @@ tico's behavior. Everything not marked that way works.
   spaces.
 - `trimblanks` — trim trailing spaces from a line before hard-wrapping
   it during justify.
-- `wordbounds` — a more Unix-like definition of a word boundary
-  (punctuation counts as its own word) for word-wise cursor movement.
-  **(not yet implemented)**
+- `wordbounds` — treat punctuation as part of a word for word-wise
+  movement (`^Left`/`^Right`) and deletion (`^Del`, `Sh-^Del`), so
+  `bar.baz` is one word rather than two. It doesn't apply at the prompts
+  or to word completion. `--wordbounds` (`-W`) on the command line.
 - `wordchars STRING` — extra characters (beyond letters and digits)
-  that count as part of a word. Honored by word completion (`^]`): with
-  `set wordchars "_"`, typing `foo` and pressing `^]` can complete to
-  `foo_bar`. Word-wise movement doesn't consult it yet. **(partly
-  implemented)**
+  that count as part of a word, for word-wise movement and deletion (in
+  the text and at the prompts) and for word completion (`^]`). By default
+  even an underscore separates words: with `set wordchars "_"`,
+  `foo_bar` is one word, and typing `foo` and pressing `^]` can complete
+  to it.
 - `zap` — let Backspace/Delete erase a marked selection in one go,
   instead of requiring Cut first. **(not yet implemented)**
 
@@ -182,8 +186,12 @@ tico's behavior. Everything not marked that way works.
 - `nohelp` — don't show the two-line key-reference bar at the bottom.
 - `quickblank` — clear a status-bar message on the very next keystroke,
   instead of leaving it up for a second or two.
-- `rawsequences` — work around numeric-keypad key-code confusion on
-  some terminals. **(not yet implemented)**
+- `rawsequences` — in nano, decode key escape sequences itself rather
+  than through the terminal description (terminfo). tico always decodes
+  them itself, so here the option's only effect is the one nano pairs
+  with it: mouse support starts off, even with `set mouse` or `-m`
+  (`M-M` can still turn it on). `--rawsequences` (`-K`) on the command
+  line.
 - `showcursor` — show the terminal cursor in the file browser (on the
   selected name) and in help text, where tico would otherwise hide it.
   In help text the arrow keys then move the cursor through the text,
