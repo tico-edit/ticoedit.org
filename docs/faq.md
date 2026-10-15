@@ -38,6 +38,19 @@ for it.  There are some benefits to using Rust, which is why I chose it:
 * Cross-platform support is relatively easy.  I can support Linux, macOS and Windows with a small amount of isolated
 platform-specific code without having to worry about the different ways string functions work in libc.
 
+## Where does the name tico come from?
+
+The name `tico` comes from nano's predecessor `pico`, which was short for PIne COmposer.  I just changed the `p` to
+a `t`.  It doesn't mean anything, but it is just as short as either `pico` or `nano`.
+
+## How do you pronounce pico?
+
+...
+
+## How do you pronounce tico?
+
+...
+
 ## Is Tico the Toucan a Dinosaur?
 
 Yes, as with all birds, Tico is a dinosaur.
