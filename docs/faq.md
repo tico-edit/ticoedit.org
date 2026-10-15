@@ -51,7 +51,8 @@ Since `pico` is short for PIne COmposer, though, I think it should be pronounced
 
 ## How do you pronounce tico?
 
-...
+`tico` isn't short for anything, but like `pico` (the way I say it), it is pronounced with a long "i":
+/ˈtaɪkoʊ/ (TIE-koh).
 
 ## Is Tico the Toucan a Dinosaur?
 
