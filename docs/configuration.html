@@ -143,8 +143,10 @@ tico's behavior. Everything not marked that way works.</p>
 <h3>Editing behavior</h3>
 
 <ul>
-<li><code>afterends</code> — with word-selection movement, stop at the end of a
-word instead of its start. <strong>(not yet implemented)</strong></li>
+<li><code>afterends</code> — make <code>^Right</code> (next word) stop at the end of a word
+instead of at the start of the next one, both in the text and at the
+prompts, and make <code>^Del</code> delete up to that word end.
+<code>--afterends</code> (<code>-y</code>) on the command line.</li>
 <li><code>atblanks</code> — when <code>softwrap</code> is on, break a wrapped line after the
 last blank that fits on the row rather than mid-word (a word wider
 than the whole row still breaks mid-word).</li>
@@ -187,14 +189,16 @@ row first, then of the whole line. Toggled with <code>M-S</code>.</li>
 spaces.</li>
 <li><code>trimblanks</code> — trim trailing spaces from a line before hard-wrapping
 it during justify.</li>
-<li><code>wordbounds</code> — a more Unix-like definition of a word boundary
-(punctuation counts as its own word) for word-wise cursor movement.
-<strong>(not yet implemented)</strong></li>
+<li><code>wordbounds</code> — treat punctuation as part of a word for word-wise
+movement (<code>^Left</code>/<code>^Right</code>) and deletion (<code>^Del</code>, <code>M-Bsp</code>), so
+<code>bar.baz</code> is one word rather than two. It doesn't apply at the prompts
+or to word completion. <code>--wordbounds</code> (<code>-W</code>) on the command line.</li>
 <li><code>wordchars STRING</code> — extra characters (beyond letters and digits)
-that count as part of a word. Honored by word completion (<code>^]</code>): with
-<code>set wordchars "_"</code>, typing <code>foo</code> and pressing <code>^]</code> can complete to
-<code>foo_bar</code>. Word-wise movement doesn't consult it yet. <strong>(partly
-implemented)</strong></li>
+that count as part of a word, for word-wise movement and deletion (in
+the text and at the prompts) and for word completion (<code>^]</code>). By default
+even an underscore separates words: with <code>set wordchars "_"</code>,
+<code>foo_bar</code> is one word, and typing <code>foo</code> and pressing <code>^]</code> can complete
+to it.</li>
 <li><code>zap</code> — let Backspace/Delete erase a marked selection in one go,
 instead of requiring Cut first. <strong>(not yet implemented)</strong></li>
 </ul>
@@ -219,7 +223,13 @@ numbers, the selection, and the <code>&lt;</code>/<code>&gt;</code> markers on a
 scrolled line. Anything given its own color with a <code>set …color</code> line
 keeps that color. <code>--boldtext</code> (<code>-D</code>) on the command line.</li>
 <li><code>bookstyle</code> — when justifying, treat any line that starts with
-whitespace as beginning a new paragraph. <strong>(not yet implemented)</strong></li>
+whitespace as beginning a new paragraph, so book-style text whose
+paragraphs are marked only by an indented first line justifies one
+paragraph at a time. Paragraph movement (<code>M-(</code>/<code>M-)</code>) follows the
+same rule. Only the very start of the line counts: a quoted line
+indented after its quote prefix (<code>&gt;  text</code>) doesn't begin one. Has no
+effect while <code>autoindent</code> is on. <code>--bookstyle</code> (<code>-O</code>) on the command
+line.</li>
 <li><code>constantshow</code> — after every keystroke, show the cursor's position
 in the status bar, the same report <code>^C</code> gives: line, column and
 character, each out of the total and as a percentage. A message
@@ -229,7 +239,11 @@ the code of the character under the cursor instead. Has no effect
 under <code>zero</code>. <code>--constantshow</code> (<code>-c</code>) on the command line; <code>M-C</code>
 toggles it (and, under <code>zero</code>, turns <code>zero</code> off).</li>
 <li><code>emptyline</code> — leave the line below the title bar blank instead of
-using it for text. <strong>(not yet implemented)</strong></li>
+using it for text (in the editor, the file browser and the help
+viewer, where the help text then starts right below the blank line).
+Only on a terminal taller than six rows, and never with <code>minibar</code> or
+<code>zero</code>, which have no title bar. <code>--emptyline</code> (<code>-e</code>) on the command
+line.</li>
 <li><code>guidestripe N</code> — draw a vertical guide bar in column <code>N</code>.</li>
 <li><code>indicator</code> — show a position+portion scrollbar-style indicator
 (colored by <code>scrollercolor</code>) in the rightmost column, beside the
@@ -255,8 +269,12 @@ scrolling, and so on).</li>
 <li><code>nohelp</code> — don't show the two-line key-reference bar at the bottom.</li>
 <li><code>quickblank</code> — clear a status-bar message on the very next keystroke,
 instead of leaving it up for a second or two.</li>
-<li><code>rawsequences</code> — work around numeric-keypad key-code confusion on
-some terminals. <strong>(not yet implemented)</strong></li>
+<li><code>rawsequences</code> — in nano, decode key escape sequences itself rather
+than through the terminal description (terminfo). tico always decodes
+them itself, so here the option's only effect is the one nano pairs
+with it: mouse support starts off, even with <code>set mouse</code> or <code>-m</code>
+(<code>M-M</code> can still turn it on). <code>--rawsequences</code> (<code>-K</code>) on the command
+line.</li>
 <li><code>showcursor</code> — show the terminal cursor in the file browser (on the
 selected name) and in help text, where tico would otherwise hide it.
 In help text the arrow keys then move the cursor through the text,
