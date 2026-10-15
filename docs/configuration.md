@@ -111,7 +111,7 @@ tico's behavior. Everything not marked that way works.
 - `trimblanks` — trim trailing spaces from a line before hard-wrapping
   it during justify.
 - `wordbounds` — treat punctuation as part of a word for word-wise
-  movement (`^Left`/`^Right`) and deletion (`^Del`, `Sh-^Del`), so
+  movement (`^Left`/`^Right`) and deletion (`^Del`, `M-Bsp`), so
   `bar.baz` is one word rather than two. It doesn't apply at the prompts
   or to word completion. `--wordbounds` (`-W`) on the command line.
 - `wordchars STRING` — extra characters (beyond letters and digits)
