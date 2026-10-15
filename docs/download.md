@@ -4,9 +4,9 @@
 
 T<download.json|downloads>
 
-Older releases can be obtained from the project GitHub:
+Older releases are available from the project's GitHub repository:
 
-[github.com/tico-edit/tico](https://github.com/tico-edit/tico)
+[github.com/tico-edit/tico/releases](https://github.com/tico-edit/tico/releases)
 
 ## Build from source
 
