@@ -136,7 +136,13 @@ tico's behavior. Everything not marked that way works.
   scrolled line. Anything given its own color with a `set …color` line
   keeps that color. `--boldtext` (`-D`) on the command line.
 - `bookstyle` — when justifying, treat any line that starts with
-  whitespace as beginning a new paragraph. **(not yet implemented)**
+  whitespace as beginning a new paragraph, so book-style text whose
+  paragraphs are marked only by an indented first line justifies one
+  paragraph at a time. Paragraph movement (`M-(`/`M-)`) follows the
+  same rule. Only the very start of the line counts: a quoted line
+  indented after its quote prefix (`>  text`) doesn't begin one. Has no
+  effect while `autoindent` is on. `--bookstyle` (`-O`) on the command
+  line.
 - `constantshow` — after every keystroke, show the cursor's position
   in the status bar, the same report `^C` gives: line, column and
   character, each out of the total and as a percentage. A message
@@ -146,7 +152,11 @@ tico's behavior. Everything not marked that way works.
   under `zero`. `--constantshow` (`-c`) on the command line; `M-C`
   toggles it (and, under `zero`, turns `zero` off).
 - `emptyline` — leave the line below the title bar blank instead of
-  using it for text. **(not yet implemented)**
+  using it for text (in the editor, the file browser and the help
+  viewer, where the help text then starts right below the blank line).
+  Only on a terminal taller than six rows, and never with `minibar` or
+  `zero`, which have no title bar. `--emptyline` (`-e`) on the command
+  line.
 - `guidestripe N` — draw a vertical guide bar in column `N`.
 - `indicator` — show a position+portion scrollbar-style indicator
   (colored by `scrollercolor`) in the rightmost column, beside the
