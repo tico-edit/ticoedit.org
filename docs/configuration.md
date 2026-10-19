@@ -128,8 +128,9 @@ tico's behavior. Everything not marked that way works.
   even an underscore separates words: with `set wordchars "_"`,
   `foo_bar` is one word, and typing `foo` and pressing `^]` can complete
   to it.
-- `zap` — let Backspace/Delete erase a marked selection in one go,
-  instead of requiring Cut first. **(not yet implemented)**
+- `zap` — let Backspace/Delete erase a marked selection in one go, the
+  way `M-Del` does, without putting it in the cutbuffer. Also
+  `-Z`/`--zap` on the command line.
 
 ### Search & replace
 

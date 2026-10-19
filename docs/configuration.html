@@ -207,8 +207,9 @@ the text and at the prompts) and for word completion (<code>^]</code>). By defau
 even an underscore separates words: with <code>set wordchars "_"</code>,
 <code>foo_bar</code> is one word, and typing <code>foo</code> and pressing <code>^]</code> can complete
 to it.</li>
-<li><code>zap</code> — let Backspace/Delete erase a marked selection in one go,
-instead of requiring Cut first. <strong>(not yet implemented)</strong></li>
+<li><code>zap</code> — let Backspace/Delete erase a marked selection in one go, the
+way <code>M-Del</code> does, without putting it in the cutbuffer. Also
+<code>-Z</code>/<code>--zap</code> on the command line.</li>
 </ul>
 
 <h3>Search &amp; replace</h3>
