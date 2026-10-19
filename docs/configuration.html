@@ -160,9 +160,11 @@ typed further up a paragraph pushes words along into the line the
 previous wrap created instead of leaving a trail of short lines. Undo
 takes back the wrap together with the keystroke that caused it. Also
 <code>-b</code>/<code>--breaklonglines</code> on the command line, and toggled with <code>M-L</code>.</li>
-<li><code>colonparsing</code> — accept a <code>filename:line[,column]</code> suffix on files
-named on the command line, to open straight to that spot. <strong>(not yet
-implemented)</strong></li>
+<li><code>colonparsing</code> — accept a <code>filename:line</code> or <code>filename:line:column</code>
+argument on the command line (as compilers and <code>grep -n</code> print them)
+to open <code>filename</code> straight at that spot. This only kicks in when no
+file by the full name exists but one by the shorter name does, and
+when no <code>+line</code> was given for it. Also <code>-@</code>/<code>--colonparsing</code>.</li>
 <li><code>cutfromcursor</code> — cut-line (<code>^K</code>) cuts from the cursor to the end of
 the line, instead of the whole line.</li>
 <li><code>fill N</code> — the target line width for hard-wrap and justify (<code>^J</code>).

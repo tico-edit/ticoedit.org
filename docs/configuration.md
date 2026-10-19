@@ -81,9 +81,11 @@ tico's behavior. Everything not marked that way works.
   previous wrap created instead of leaving a trail of short lines. Undo
   takes back the wrap together with the keystroke that caused it. Also
   `-b`/`--breaklonglines` on the command line, and toggled with `M-L`.
-- `colonparsing` — accept a `filename:line[,column]` suffix on files
-  named on the command line, to open straight to that spot. **(not yet
-  implemented)**
+- `colonparsing` — accept a `filename:line` or `filename:line:column`
+  argument on the command line (as compilers and `grep -n` print them)
+  to open `filename` straight at that spot. This only kicks in when no
+  file by the full name exists but one by the shorter name does, and
+  when no `+line` was given for it. Also `-@`/`--colonparsing`.
 - `cutfromcursor` — cut-line (`^K`) cuts from the cursor to the end of
   the line, instead of the whole line.
 - `fill N` — the target line width for hard-wrap and justify (`^J`).
