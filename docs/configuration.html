@@ -187,8 +187,10 @@ ask for <code>breaklonglines</code>, and <code>set nowrap</code> does nothing. O
 command line, <code>-w</code>/<code>--nowrap</code> turns hard-wrapping off whatever the
 configuration says; given together with <code>-b</code>, the later of the two
 wins.</li>
-<li><code>rebinddelete</code> — treat the Delete key as Delete even on terminals
-that report it as Backspace. <strong>(not yet implemented)</strong></li>
+<li><code>rebinddelete</code> — swap the Backspace and Delete keys, for terminals
+whose Backspace key sends what others send for Delete (and the other
+way round). <code>^H</code> and the Alt/Ctrl/Shift forms of the keys are left
+as they are. Also <code>-d</code>/<code>--rebinddelete</code>.</li>
 <li><code>smarthome</code> — pressing Home moves to the first non-blank character
 first, then to column 1 on a second press.</li>
 <li><code>softwrap</code> — display an overlong line across multiple screen rows

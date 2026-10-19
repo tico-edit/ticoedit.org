@@ -108,8 +108,10 @@ tico's behavior. Everything not marked that way works.
   command line, `-w`/`--nowrap` turns hard-wrapping off whatever the
   configuration says; given together with `-b`, the later of the two
   wins.
-- `rebinddelete` — treat the Delete key as Delete even on terminals
-  that report it as Backspace. **(not yet implemented)**
+- `rebinddelete` — swap the Backspace and Delete keys, for terminals
+  whose Backspace key sends what others send for Delete (and the other
+  way round). `^H` and the Alt/Ctrl/Shift forms of the keys are left
+  as they are. Also `-d`/`--rebinddelete`.
 - `smarthome` — pressing Home moves to the first non-blank character
   first, then to column 1 on a second press.
 - `softwrap` — display an overlong line across multiple screen rows
