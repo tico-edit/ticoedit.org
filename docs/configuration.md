@@ -74,7 +74,13 @@ tico's behavior. Everything not marked that way works.
 - `autoindent` — indent a newly created line to match the previous
   line's leading whitespace.
 - `breaklonglines` — automatically hard-wrap the current line once it
-  grows past the fill column, as you type. **(not yet implemented)**
+  grows past the fill column, as you type: the last word that crosses
+  the column moves down to a line of its own, keeping the line's quote
+  prefix (see `quotestr`) and, with `autoindent`, its indentation. Text
+  typed further up a paragraph pushes words along into the line the
+  previous wrap created instead of leaving a trail of short lines. Undo
+  takes back the wrap together with the keystroke that caused it. Also
+  `-b`/`--breaklonglines` on the command line, and toggled with `M-L`.
 - `colonparsing` — accept a `filename:line[,column]` suffix on files
   named on the command line, to open straight to that spot. **(not yet
   implemented)**
@@ -95,9 +101,11 @@ tico's behavior. Everything not marked that way works.
   always ends with a newline, even one that was read without one. With
   this set, the text ends wherever it ends, and a file without a final
   newline is saved that way.
-- `nowrap` — legacy alias for `unset breaklonglines`. **(not yet
-  implemented — has no effect at all currently, including on
-  `breaklonglines`)**
+- `nowrap` — legacy, on by default: `unset nowrap` is another way to
+  ask for `breaklonglines`, and `set nowrap` does nothing. On the
+  command line, `-w`/`--nowrap` turns hard-wrapping off whatever the
+  configuration says; given together with `-b`, the later of the two
+  wins.
 - `rebinddelete` — treat the Delete key as Delete even on terminals
   that report it as Backspace. **(not yet implemented)**
 - `smarthome` — pressing Home moves to the first non-blank character

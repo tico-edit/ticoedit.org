@@ -153,7 +153,13 @@ than the whole row still breaks mid-word).</li>
 <li><code>autoindent</code> — indent a newly created line to match the previous
 line's leading whitespace.</li>
 <li><code>breaklonglines</code> — automatically hard-wrap the current line once it
-grows past the fill column, as you type. <strong>(not yet implemented)</strong></li>
+grows past the fill column, as you type: the last word that crosses
+the column moves down to a line of its own, keeping the line's quote
+prefix (see <code>quotestr</code>) and, with <code>autoindent</code>, its indentation. Text
+typed further up a paragraph pushes words along into the line the
+previous wrap created instead of leaving a trail of short lines. Undo
+takes back the wrap together with the keystroke that caused it. Also
+<code>-b</code>/<code>--breaklonglines</code> on the command line, and toggled with <code>M-L</code>.</li>
 <li><code>colonparsing</code> — accept a <code>filename:line[,column]</code> suffix on files
 named on the command line, to open straight to that spot. <strong>(not yet
 implemented)</strong></li>
@@ -174,9 +180,11 @@ onto it, and typing there adds a fresh one below), so a saved file
 always ends with a newline, even one that was read without one. With
 this set, the text ends wherever it ends, and a file without a final
 newline is saved that way.</li>
-<li><code>nowrap</code> — legacy alias for <code>unset breaklonglines</code>. <strong>(not yet
-implemented — has no effect at all currently, including on
-<code>breaklonglines</code>)</strong></li>
+<li><code>nowrap</code> — legacy, on by default: <code>unset nowrap</code> is another way to
+ask for <code>breaklonglines</code>, and <code>set nowrap</code> does nothing. On the
+command line, <code>-w</code>/<code>--nowrap</code> turns hard-wrapping off whatever the
+configuration says; given together with <code>-b</code>, the later of the two
+wins.</li>
 <li><code>rebinddelete</code> — treat the Delete key as Delete even on terminals
 that report it as Backspace. <strong>(not yet implemented)</strong></li>
 <li><code>smarthome</code> — pressing Home moves to the first non-blank character
