@@ -72,7 +72,61 @@
           })();
         </script>
       </div>
-      
+      <h2>tico for DOS</h2>
+
+<p><strong>tico16</strong> is tico for 16-bit MS-DOS: a small, full-screen text editor
+that runs on anything from an original IBM PC with an 8088 up.</p>
+
+<p>It brings tico's look and nano-style keys to DOS. The title bar, status
+line and shortcut hints along the bottom look the same as tico's, and
+<code>^O</code> writes the file out, <code>^X</code> exits, <code>^K</code> cuts a line and <code>^U</code> pastes
+it back. If you know nano or tico, you already know how to use it.</p>
+
+<p><pre class="sh_dos">C:\&gt;TICO CONFIG.SYS
+</pre></p>
+
+<p>The goal is simple: make quick edits to files like <code>CONFIG.SYS</code> and
+<code>AUTOEXEC.BAT</code> faster and more pleasant than MS-DOS <code>EDIT</code>, even on an
+XT-class machine.</p>
+
+<h3>Small and self-contained</h3>
+
+<p>tico16 is a single <code>TICO.EXE</code> of about 30 KB. There's nothing to
+install and no configuration file. It needs no EMS, XMS, mouse or math
+coprocessor, and it uses whatever conventional memory is free, so it can
+edit files of a few hundred kilobytes. It draws straight into text video
+memory to stay responsive on slow hardware, and supports both color and
+monochrome displays.</p>
+
+<h3>Your files, left alone</h3>
+
+<p>Like tico, tico16 reads and writes DOS (CR LF), Unix (LF) and classic
+Mac (CR) text files, keeping each file's format when it saves. That's
+handy for vintage machines that trade files with Unix systems or old
+Macs. New files are saved in DOS format. Bytes are never converted
+between code pages, and a trailing Ctrl+Z end-of-file marker is kept.</p>
+
+<p>Saving is careful too. tico16 writes the new text to a temporary file
+first and only replaces the original once that has worked, so a full
+disk doesn't cost you the file. Read-only files are refused rather than
+overwritten.</p>
+
+<h3>What it leaves out</h3>
+
+<p>tico16 keeps only what makes sense on a 4.77 MHz PC. There's no syntax
+highlighting, configuration, search, undo, mouse or multiple files.
+Keys for commands it doesn't have just say "Unbound key", and the
+shortcut hints list only the commands that are there. The
+<a href="https://github.com/tico-edit/tico16/blob/main/DIFFERENCES.md">DIFFERENCES</a>
+file has the details.</p>
+
+<h3>Getting it</h3>
+
+<p>tico16 is new: version 0.01 is the first release. Download <code>tico.exe</code>
+from the <a href="https://github.com/tico-edit/tico16/releases">releases page</a>,
+copy it to your DOS machine and run <code>TICO</code>. The source, built on Linux
+with Open Watcom, is at
+<a href="https://github.com/tico-edit/tico16">github.com/tico-edit/tico16</a>.</p>
 
 
     </div>

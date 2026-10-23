@@ -38,6 +38,14 @@ for it.  There are some benefits to using Rust, which is why I chose it:
 * Cross-platform support is relatively easy.  I can support Linux, macOS and Windows with a small amount of isolated
 platform-specific code without having to worry about the different ways string functions work in libc.
 
+## What is tico16?
+
+[tico16](tico16.html) is tico for 16-bit MS-DOS.  It is a separate, much smaller program, written in C rather
+than Rust, that brings tico's screen layout and nano-style keys to anything from an original 8088 IBM PC up.  It
+does the essentials: moving around, typing, cutting and pasting lines, and saving DOS, Unix and Mac text files
+without changing their format.  It's a single 30 KB `TICO.EXE`, meant as a friendlier replacement for `EDIT` when
+you need to change `CONFIG.SYS`.
+
 ## Where does the name tico come from?
 
 The name `tico` comes from nano's predecessor `pico`, which was short for PIne COmposer.  I just changed the `p` to
