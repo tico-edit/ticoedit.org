@@ -53,7 +53,7 @@ file has the details.
 
 ### Getting it
 
-tico16 is new: version 0.01 is the first release. Download `tico.exe`
+tico16 is new, and the current version is 0.02. Download `tico.exe`
 from the [releases page](https://github.com/tico-edit/tico16/releases),
 copy it to your DOS machine and run `TICO`. The source, built on Linux
 with Open Watcom, is at
