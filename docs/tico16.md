@@ -5,6 +5,8 @@
 **tico16** is tico for 16-bit MS-DOS: a small, full-screen text editor
 that runs on anything from an original IBM PC with an 8088 up.
 
+![tico16 editing a CONFIG.SYS with a boot menu, in 80x25 DOS text mode](images/tico16-config-sys.png)
+
 It brings tico's look and nano-style keys to DOS. The title bar, status
 line and shortcut hints along the bottom look the same as tico's, and
 `^O` writes the file out, `^X` exits, `^K` cuts a line and `^U` pastes
