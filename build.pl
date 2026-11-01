@@ -7,6 +7,10 @@ use HTTP::Tiny;
 use JSON::MaybeXS ();
 use Path::Tiny qw( path );
 use XOR 0.11;
+use File::chdir;
+use Path::Tiny ();
+
+$CWD = Path::Tiny->new(__FILE__)->parent;
 
 GetOptions(
   'release' => \my $release,

@@ -1,5 +1,7 @@
 # tico16
 
+<center>[ [tico16](tico16) | [tico68](tico68) ]</center>
+
 ## tico for DOS
 
 **tico16** is tico for 16-bit MS-DOS: a small, full-screen text editor
