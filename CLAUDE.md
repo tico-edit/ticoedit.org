@@ -96,3 +96,10 @@ To add a language:
    then run `./build.pl`. Load `/?hello=EXT` under `plackup test.psgi` to see it on
    the page.
 5. Commit the source file, the PNG, the template, and the regenerated `.html`.
+
+## Theme screenshots
+
+`docs/configuration.md` shows every built-in theme highlighting
+`extra/themes/sample.rs`, in `docs/images/themes/tico-builtin-NAME.png` (1012x1056).
+`extra/themes/capture.sh` takes them in a 92x48 xterm (DejaVu Sans Mono 13); give it
+theme names to redo only those. Like `extra/crt/capture.sh`, the user has to run it.
