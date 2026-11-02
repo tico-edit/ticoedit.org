@@ -37,11 +37,10 @@ the work of the Home, End and Page keys a Plus doesn't have.
 
 ### Made for a small screen
 
-tico's title bar and shortcut bar are optional. By default they appear
-only when a window has room for them, so on a Plus every row goes to your
-text, and on a large monitor tico68 looks like tico. The Preferences
-dialog can show or hide each bar for good, and the Font menu lists your
-fixed-width fonts. The default is Monaco 9.
+tico's title bar and shortcut bar are on by default, so tico68 looks like
+tico. On a Plus you may want those rows for your text: the Preferences
+dialog can hide either bar, and the Font menu lists your fixed-width
+fonts. The default is Monaco 9.
 
 ### Your files, left alone
 
@@ -73,13 +72,20 @@ file has the details.
 
 ### Getting it
 
-tico68 is new, and the current version is 0.01. It has been tested under
+tico68 is new, and the current version is 0.02. It has been tested under
 Mini vMac on System 6 and 7.0.1, and has had a first, good run on a real
 Macintosh Plus. It hasn't been tried on any other real Mac yet.
 
-Download `tico68-800k.dsk` from the
-[releases page](https://github.com/tico-edit/tico68/releases). It's a
-plain 800K HFS disk image for a Floppy Emu or an emulator, and it holds
-the application of about 55 KB and the README. The source, built on Linux
-with [Retro68](https://github.com/autc04/Retro68), is at
+There are two downloads on the
+[releases page](https://github.com/tico-edit/tico68/releases):
+
+* `tico68-800k.dsk` is a plain 800K HFS disk image for a Floppy Emu or an
+  emulator. It holds the application of about 55 KB and a Read Me.
+* `tico68.sit` is a StuffIt archive of the same two files, for a Mac that
+  can reach an FTP server. Download it in binary mode, with Fetch for
+  instance, and expand it with StuffIt Expander. Version 4.0.1 is tested,
+  on System 6 and 7.0.1.
+
+The source, built on Linux with
+[Retro68](https://github.com/autc04/Retro68), is at
 [github.com/tico-edit/tico68](https://github.com/tico-edit/tico68).
